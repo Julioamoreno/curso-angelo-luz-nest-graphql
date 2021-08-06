@@ -1,10 +1,10 @@
 {
-    "type": "mysql",
+    "type": "postgres",
     "host": "localhost",
-    "port": 3306,
-    "username": "root",
+    "port": 5432,
+    "username": "postgres",
     "password": "root",
-    "database": "test",
+    "database": "nest_api",
     "entities": [
         "dist/**/*.entity{.ts,.js}"
     ],
