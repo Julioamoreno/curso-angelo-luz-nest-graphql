@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+  api:
+    container_name: nest_api
+    build: .
+    ports: 
+      - "3000:3000"
+    volumes: 
+      - .:/home/api
+      - /home/api/node_modules
+  db:
+    container_name: nest_db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: test
+      POSTGRES_USER: test
+      POSTGRES_DB: nest_api
+    ports:
+      - "5433:5432"
