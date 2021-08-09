@@ -5,7 +5,7 @@ services:
     container_name: nest_api
     build: .
     ports: 
-      - "3000:3000"
+      - ${API_PORT}:${API_PORT}
     volumes: 
       - .:/home/api
       - /home/api/node_modules
@@ -14,8 +14,8 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: test
-      POSTGRES_USER: test
-      POSTGRES_DB: nest_api
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_DB: ${DB_NAME}
     ports:
       - "5433:5432"
